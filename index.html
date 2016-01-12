@@ -1,0 +1,97 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<link rel="stylesheet" type="text/css" href="./css/mtimepicker.css" />
+<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="./mtimepicker.js"></script>
+<script type="text/javascript">
+$(document).ready( function(){
+	$('#my_time').mTimePicker().mTimePicker( 'setTime', '12:00' );
+
+    $('button#set').on('click', function(event) { $('#my_time').mTimePicker( 'setTime', '15:40' ); });
+    $('button#get').on('click', function(event) { alert( 'On timer is ' + $('#my_time').mTimePicker('getTime') ); });
+});
+</script>
+<head>
+<title>MantellaTimePicker</title>
+</head>
+<style type="text/css">
+  body { background-color:#F5F5F5; font-size: 12px; font-family: Tahoma; color: #555; margin: 24px; }
+  .section { background: none repeat scroll 0 0 #FFFFFF; box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); margin-bottom: 27px; padding: 20px; line-height: 18px; }
+  ul.section { padding-left: 32px; }
+  .section-title { font-size: 20px;line-height: 22px;margin-bottom: 10px;margin-top: 10px;font-weight: normal;}
+  .in-section-title {font-size: 18px;line-height: 20px;margin-bottom: 8px;font-weight: normal;}
+  pre {background-color: #FAFAFA;border: 1px solid #CCCCCC;color: #000000;font-size: 11px;padding: 4px;}
+  a {color: #006096;text-decoration:none;font-weight: bold; }
+  a:hover { text-decaration: underline; }
+  .definition { display: inline-block; font-family: monospace;font-size: 15px;color: #0070A6;}
+  .typization { margin-left: 30px; font-style: italic; }
+  .description {display:block;margin-bottom: 20px; margin-left: 10px;}
+  #my_time {	background-color:#F9F9F9;
+	border:1px solid #AAAAAA;
+	border-radius:5px;
+	color:#555555;
+	font-size:12px;
+    padding: 3px;
+    width: 72px;
+    text-align:center;
+}
+</style>
+<body>
+
+<div class="section-title">MantellaTimePicker demo</div>
+<div class="section">
+	Select time: <input id="my_time" type="text" readonly="readonly">
+	<div style="margin-top:40px;">
+		<button id="set">Set 15:40</button>&nbsp;&nbsp;<button id="get">Get Time</button>
+	</div>
+</div>
+
+<div class="section-title">Features</div>
+<ul class="section">
+    <li>Wrap on standart input</li>
+    <li>Time selection without keyboard use</li>
+    <li>Easy styling</li>
+    <li>Compact view on page</li>
+</ul>
+
+<div class="section-title">Getting started</div>
+<div class="section">
+	<div class="in-section-title">Insert in head</div>
+	<pre>&lt;!-- basic style --&gt;
+&lt;link rel="stylesheet" type="text/css" href="your_path/css/mtimepicker.css" /&gt;
+&lt;!-- required javascripts --&gt;
+&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="your_path/js/mtimepicker.js"&gt;&lt;/script&gt;</pre>
+	<div class="in-section-title">Insert in body</div>
+	<pre>&lt;input id="my_time" type="text" readonly="readonly" /&gt;
+
+&lt;script type="text/javascript"&gt;
+$(document).ready( function(){
+	$('#my_time').mTimePicker().mTimePicker( 'setTime', '15:40' )
+});
+&lt;/script&gt;</pre>
+
+</div>
+
+<div class="section-title">Documentation</div>
+<div class="section">
+	<div class="in-section-title">Options</div>
+	<span class="description">no options</span>
+
+	<div class="in-section-title">Methods</div>
+	<span class="definition">object.mTimePicker('setTime', string)</span><span class="typization">Arguments: time in format hh:mm</span>
+	<span class="description">Set new time value</span>
+	<span class="definition">object.mTimePicker('getTime') : string</span><span class="typization">Arguments: none</span>
+	<span class="description">Return string value of selected time in format hh:mm</span>
+
+	<div class="in-section-title">Events</div>
+	<span class="description">no events</span>
+</div>
+
+</body>
+</html>
+

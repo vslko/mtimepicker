@@ -1,0 +1,85 @@
+/*
+ * MTimePicker v0.1 Stylesheet
+ * Copyright (c) 2013 Vasilij Olhov
+ * Dual licensed under the MIT and GPL licenses
+ */
+
+.mtimepicker-container {
+    padding:0;
+    margin:0;
+    display: inline-block;
+    position:relative;
+}
+.mtimepicker-clock {
+    line-height: 18px;
+    background-image: url('./mtimepicker.png');
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    padding: 0;
+    padding-left: 18px !important;
+    /*width: 38px !important;*/
+    cursor:pointer; *cursor:hand;
+}
+
+.mtimepicker-window {
+    display: none;
+    position: absolute;
+    padding: 2;
+    margin : 0;
+    font-family: Arial,Verdana,sans-serif;
+    color: #999;
+    width:100px;
+    height:190px;
+    border:1px solid #C9C9C9;
+    border-radius: 0 8px 8px 8px;
+    background-color: #fff;
+    z-index: 10000;
+}
+
+.mtimepicker-scale {
+    float:left;
+    margin:4px;
+    position:relative;
+}
+.mtimepicker-scale .mtimepicker-sliding-scale {
+    position: absolute;
+    top:0;
+    margin:0;
+    padding:0;
+}
+
+.mtimepicker-scale .mtimepicker-sliding-scale div {
+    padding: 0;
+    margin: 0;
+    font-size: 8px;
+    text-align: center;
+}
+.mtimepicker-scale .mtimepicker-sliding-scale .mtimepicker-scaler-prev-prev { font-size: 9px; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30); -khtml-opacity: 0.3; opacity: 0.3; }
+.mtimepicker-scale .mtimepicker-sliding-scale .mtimepicker-scaler-prev { font-size: 10px; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60); -khtml-opacity: 0.6; opacity: 0.6; }
+.mtimepicker-scale .mtimepicker-sliding-scale .mtimepicker-scaler-current { font-size: 12px; font-weight:bold; }
+.mtimepicker-scale .mtimepicker-sliding-scale .mtimepicker-scaler-next { font-size: 10px; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60); -khtml-opacity: 0.6; opacity: 0.6; }
+.mtimepicker-scale .mtimepicker-sliding-scale .mtimepicker-scaler-next-next { font-size: 9px; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=30); -khtml-opacity: 0.3; opacity: 0.3; }
+
+.mtimepicker-line {
+    position: relative;
+    float:left;
+    background-color: #F9F9F9;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin:4px;
+    width: 12px;
+}
+
+.mtimepicker-slider {
+    position: absolute;
+    left:-4px;
+    top:0;
+    z-index:2;
+    width: 18px;
+    height: 10px;
+    background-color: #DDD;
+    border:1px solid #999;
+    cursor:pointer; *cursor:hand;
+    border-radius: 3px;
+}
+.mtimepicker-slider:hover, .mtimepicker-slider.active { background-color: #ccc; }
