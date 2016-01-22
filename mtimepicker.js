@@ -218,7 +218,7 @@
         // === move mouse over line -> show scales ===
         win.find('.mtimepicker-line').on('mousemove', function(event) {
             var slider    = $(this).children('.mtimepicker-slider').first(),
-                mousePos  = event.clientY - $(this).offset().top,
+                mousePos  = event.pageY - $(this).offset().top,
                 sliderPos = __getSliderPositionByMousePosition.call( $(this), mousePos );
                 setScalePosition.call( $(this), sliderPos );
         });
@@ -227,7 +227,7 @@
         // === click on line -> move slider, update time ===
         win.find('.mtimepicker-line').on('click', function(event) {
             var slider       = $(this).children('.mtimepicker-slider').first(),
-                clickPos     = event.clientY - $(this).offset().top;
+                clickPos     = event.pageY - $(this).offset().top;
 
             setSliderPosition.call( $(this),  clickPos );
             setTimeValueBySliderPosition.call( $(this) );
@@ -238,7 +238,7 @@
         win.find('.mtimepicker-slider').on('mousedown', function(event) {
             var drag = {
                 slider    : $(this),
-                mousePos  : event.clientY
+                mousePos  : event.pageY
             }
             clock.data('drag', drag)
             return killEvent.call(clock, event);
@@ -249,7 +249,7 @@
             var drag = clock.data('drag');
             if ( drag ) { // move slider and recalculate time value
                 var line = drag.slider.parents('.mtimepicker-line').first();
-                setSliderPosition.call( line,  ( event.clientY-line.offset().top ) );
+                setSliderPosition.call( line,  ( event.pageY-line.offset().top ) );
                 setTimeValueBySliderPosition.call( line );
                 return killEvent.call(clock, event);
             }
